@@ -29,5 +29,5 @@ Get the test video at: https://youtu.be/nWOSBu4FdO0
 <br>Step 1: Open a terminal and ```cd``` to the project directory
 <br>Step 2: Execute the following command to activate the environment:
 <br>```./etc/Scripts/activate```
-<br>Step 3: To run the project
+<br>Step 3: To run the project:
 <br>```python app.py``` (this launches a project instance on localhost)
