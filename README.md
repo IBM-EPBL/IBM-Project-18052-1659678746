@@ -26,7 +26,7 @@ Get the test video at: https://youtu.be/nWOSBu4FdO0
 </br><b><i>caution: The directory and naming has to be same as above or the project won't work!</i></b>
 
 <b>To run the project:</b>
-<br>Step 1: cd to the project directory
+<br>Step 1: Open a terminal and ```cd``` to the project directory
 <br>Step 2: Execute the following command to activate the environment:
 <br>```./etc/Scripts/activate```
 <br>Step 3: To run the project
