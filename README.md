@@ -19,7 +19,14 @@ Weights for the project can be downloaded from <u><a href="https://drive.google.
 </br><b><i>caution: The directory and naming has to be same as given above or the project won't work!</i></b>
 
 Get the test video at: https://youtu.be/nWOSBu4FdO0
-</br>Step 1: Download the video using any YouTube video downloader
-</br>Step 2: save it as "<b>swimming_pool1.mp4</b>"
+</br>Download the video using any YouTube video downloader, ensure that you're saving it as "<b>swimming_pool1.mp4</b>"
 </br>Directory: ```/media/<paste the test video here!>```
 </br><b><i>caution: The directory and naming has to be same as above or the project won't work!</i></b>
+
+To run the project:
+<br>Step 1: cd to the project directory
+<br>Step 2: Execute the following command to activate the environment:
+<br>```./etc/Scripts/activate```
+<br>Step 3: To run the project
+<br>```python app.py```
+<br>(this launches a project instance on localhost)
