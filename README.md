@@ -3,7 +3,6 @@
 # VirtualEye - Life Guard for Swimming Pools to Detect Active Drowning
 
 For now I've done a simple implementation using Python powered by YOLO v3
-
 </br>```Lag while playback? Cause: The current implementation runs on CPU```
 </br>```Solution: GPU implementation would produce higher FPS```
 
