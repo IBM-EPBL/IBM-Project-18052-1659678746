@@ -2,7 +2,9 @@
 
 # VirtualEye - Life Guard for Swimming Pools to Detect Active Drowning
 
-For now I've done a simple implementation using Python powered by YOLO v3
+> Project Stage: Alpha
+</br>Project Directory: /test-alpha
+</br><i>Powered by YOLO v3</i>
 
 Current potential issues:
 </br>```Lag while playback?``` 
