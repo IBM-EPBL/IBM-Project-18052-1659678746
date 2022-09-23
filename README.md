@@ -21,5 +21,5 @@ Weights for the project can be downloaded from <u><a href="https://drive.google.
 </br>Get the test video at: https://youtu.be/nWOSBu4FdO0
 </br>Step 1: Download the video using any YouTube video downloader
 </br>Step 2: save it as "<b>swimming_pool1.mp4</b>"
-</br>Directory: ```/media/<paste the test video here!>``
+</br>Directory: ```/media/<paste the test video here!>```
 </br><b><i>caution: The directory and naming has to be same as above or the project won't work!</i></b>
