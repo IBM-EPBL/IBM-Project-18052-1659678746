@@ -7,7 +7,7 @@ For now I've done a simple implementation using Python powered by YOLO v3
 </br>```Lag while playback? Cause: The current implementation runs on CPU```
 </br>```Solution: GPU implementation would produce higher FPS```
 
-Future updates would include Tensorflow implementation that would be capable of using CUDA Enabled GPUs that would enhance playback performance significantly
+Future updates would include Tensorflow implementation that would be capable of using CUDA Enabled GPUs, this would enhance playback performance significantly
 
 The current model is trained using ~250 sample images
 </br><b><i>more the number of sample images, more the accuracy!</i></b>
