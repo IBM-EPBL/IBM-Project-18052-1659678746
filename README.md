@@ -28,5 +28,4 @@ To run the project:
 <br>Step 2: Execute the following command to activate the environment:
 <br>```./etc/Scripts/activate```
 <br>Step 3: To run the project
-<br>```python app.py```
-<br>(this launches a project instance on localhost)
+<br>```python app.py``` (this launches a project instance on localhost)
