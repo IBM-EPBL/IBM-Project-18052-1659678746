@@ -5,7 +5,7 @@
 For now I've done a simple implementation using Python powered by YOLO v3
 
 Current potential issues:
-```Lag while playback``` 
+</br>```Lag while playback?``` 
 </br>```Cause: The current implementation runs on CPU```
 </br>```Solution: GPU implementation would produce higher FPS```
 
