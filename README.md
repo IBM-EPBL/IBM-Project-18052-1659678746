@@ -4,7 +4,7 @@
 
 For now I've done a simple implementation using Python powered by YOLO v3
 
-</br>The reason why there's lag while playback is because the current implementation runs on CPU
+</br>[Lag while playback? Cause: The current implementation runs on CPU, GPU implementation would produce higher FPS]
 
 </br>Future updates would include Tensorflow implementation that would be capable of using CUDA Enabled GPUs that would enhance playback performance significantly
 
