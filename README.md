@@ -4,7 +4,9 @@
 
 For now I've done a simple implementation using Python powered by YOLO v3
 
-</br>```Lag while playback? Cause: The current implementation runs on CPU```
+Current potential issues:
+```Lag while playback``` 
+</br>```Cause: The current implementation runs on CPU```
 </br>```Solution: GPU implementation would produce higher FPS```
 
 Future updates would include Tensorflow implementation that would be capable of using CUDA Enabled GPUs, this would enhance playback performance significantly
@@ -23,7 +25,7 @@ Get the test video at: https://youtu.be/nWOSBu4FdO0
 </br>Directory: ```/media/<paste the test video here!>```
 </br><b><i>caution: The directory and naming has to be same as above or the project won't work!</i></b>
 
-To run the project:
+<b>To run the project:</b>
 <br>Step 1: cd to the project directory
 <br>Step 2: Execute the following command to activate the environment:
 <br>```./etc/Scripts/activate```
