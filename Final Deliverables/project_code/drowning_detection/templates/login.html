@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<!-- Tailwind-Powered CSS -->
+<link rel="stylesheet" href="styles.css">
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Bootstrap Imports -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<style>
+    /* to-do: fade-in effect for all successive pages */
+</style>
+{% endblock %}
+
+{% block body %}
+<body style="max-width: 1440px; margin-left: 5%" class="bg-black overflow-hidden place-content-center">
+    <h1 style="position: absolute; rotate: 270deg; font-size: 150px; right: 2%" class="text-white font-bold">v<span class="text-blue-600">eye</span></h1>
+    <!-- login container -->
+    <div style="margin-top: 15%;" class="container grid place-content-center">
+
+        <form id="login" action="{{url_for("validate_login")}}" method="post">
+        <!-- <form id="login" action="" method="post"> -->
+            <!-- username -->
+
+            <label for="username"></label>
+            <input id="user_login_email" 
+            style="text-align: right;" 
+            class="focus:outline-none bg-black text-white text-8xl" 
+            type="text" 
+            name="user_login_email" 
+            placeholder="u/name"/>
+
+            <!-- password -->
+
+            <label for="password"></label>
+            <input id="user_login_pass" 
+            style="text-align: right;" 
+            class="focus:outline-none bg-black text-blue-600 text-8xl" 
+            type="password" 
+            name="user_login_password" 
+            placeholder="p/word">
+
+            <p style="text-align: right;
+            position: relative;
+            right: 14%;"
+            class="text-red-600">{{dyn_message}}</p>
+
+        </form>
+        <button id="login_btn" form="login" type="submit" style="margin-left: 5%; position: relative; max-width: 150px" class="hover:bg-blue-600 rounded-full text-white text-9xl pl-2 pb-4">></button>
+        
+        <div style="position: relative; bottom: 50%" class="container grid place-content-end">
+            <button id="register_direct">
+                <h1 class="mr-10 p-4 hover:bg-blue-600 text-2xl text-right text-white">
+                    <span class="font-bold text-4xl">New User?</span></br>We've got you covered!
+                </h1>
+            </button>
+        </div>
+    </div>
+    
+    
+    <script type="text/javascript">
+
+        // inupt elements
+        const user_login_email = document.getElementById("user_login_email")
+        const user_login_password= document.getElementById("user_login_password")
+        
+        // buttons
+        const login_user_button = document.getElementById("login_btn")
+        const register_user_button = document.getElementById("register_direct")
+
+        // button functions
+        // login_user_button.addEventListener("click", () => {
+        //     sessionStorage.setItem("user_login_email", user_login_email.value)
+        //     sessionStorage.setItem("user_login_pass", user_login_password.value)
+        //     window.open("/validate_login", "_blank")
+        //     window.close()
+        // })
+
+        register_user_button.addEventListener("click", () => {
+            window.open("/register_intro", "_blank")
+        })
+    </script>
+</body>
+{% endblock %}

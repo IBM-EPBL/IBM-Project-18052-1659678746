@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+
+    #detection-about {
+        rotate: 270deg;
+    }
+
+    #detection-logout {
+        rotate: 270deg;
+    }
+
+    #detection-about:hover {
+        color: black;
+        background:rgb(67, 67, 245);
+        padding: 1vh;
+    }
+
+    #detection-logout:hover {
+        color: black;
+        background:rgb(67, 67, 245);
+        padding: 1vh;
+    }
+
+    #alert-btn:hover {
+        background: white;
+        color: black;
+        border-width: 0 5px 5px 0;
+        border-color: black rgb(67, 67, 245) rgb(67, 67, 245) black;
+        opacity: 100%;
+    }
+
+    #activateAlarm-btn:hover {
+        background: white;
+        color: black;
+        border-width: 0 5px 5px 0;
+        border-color: black rgb(67, 67, 245) rgb(67, 67, 245) black;
+        opacity: 100%;
+    }
+</style>
+<script>
+
+    // Potential Counter
+    
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+
+    const update_counter = () => {
+            $.ajax({
+            url: "/counter",
+            type: "POST",
+            dataType: "json",
+            success: async function(data) {
+                console.log("potential subject drowning: " + parseInt(data[1].slice(26,-7)))
+                $(object_counter).replaceWith(data)
+                if (parseInt(data[1].slice(26,-7)) > 0) {
+                    await delay(2000)
+                }
+                update_counter()
+            }
+        })
+    }
+
+    update_counter()
+
+</script>
+{% endblock %}
+
+{% block body %}
+<body style="overflow: hidden;" class="bg-black">
+    <div class="container mx-auto mt-5">
+        <div class="container bg-black px-5 grid">
+            <h1 class="px-10 py-10 text-8xl text-white font-bold">v<span class="text-blue-600">eye</span></h1>
+            <div style="display: inline-block; position: absolute; top: 25%; right: 0">
+                <button id="detection-about" class="bg-black text-blue-600 text-5xl m-5 pr-2 pb-2">about</button>
+            </div>
+            <div style="display: inline-block; position: absolute; top: 60%; right: 0">
+                <button id="detection-logout" class="bg-black text-blue-600 text-5xl m-5 pt-2 pr-2 pb-2">logout</button>
+            </div>
+        </div>
+        <div>
+            <img style="display: inline-block; position: relative; left: 5%" class="" src="{{url_for('video')}}" width="55%"/>
+            <div style="display: inline-block; position: relative; top: -50px; left: 5%">
+                <button id="alert-btn" class="bg-black opacity-10 font-bold text-white text-5xl m-5 pr-8 pb-2">alert guards</button>
+                <br/>
+                <input id="alert-message"
+                style="position: absolute; width: 20vw; height: 80px; border-radius: 5px;"
+                class="text-2xl text-white bg-gray-700 m-5 p-2" 
+                placeholder="type a message">
+                <br/>
+                <button style="position: fixed; margin-top: 110px" id="activateAlarm-btn" class="bg-black opacity-10 font-bold text-white text-5xl ml-5 mr-5 mb-5 pr-2 pb-2">activate alarm</button>
+            </div>
+        </div> 
+        <div class="container bg-black px-5">
+            <h1 class="px-10 py-10 text-4xl text-white">potential subject drowning: <span class="text-red-500" id="object_counter">{{ dyn_var }}</span></h1>
+        </div>
+    </div>
+    <script type="module" src="{{ url_for('static', filename="js_modules/alarm.js") }}"></script>
+    <script type="module" src="{{ url_for('static', filename="js_modules/sms.js") }}"></script>
+    <script type="text/javascript">
+        var detection_logout = document.getElementById("detection-logout")
+        var detection_about = document.getElementById("detection-about")
+        var alert_btn = document.getElementById("alert-btn")
+        var activate_alarm = document.getElementById("activateAlarm-btn")
+
+        detection_logout.addEventListener("click", () => {
+            window.open("/logout", "_blank")
+            window.close()
+        })
+
+        detection_about.addEventListener("click", () => {
+            window.open("/about", "_blank")
+            window.close()
+        })
+
+
+    </script>
+</body>
+    
+{% endblock %}

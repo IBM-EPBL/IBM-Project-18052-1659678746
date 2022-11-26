@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<!-- Tailwind-Powered CSS -->
+<link rel="stylesheet" href="styles.css">
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Bootstrap Imports -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body %}
+<body style="max-width: 1440px; margin-left: 5%" class="bg-black overflow-hidden place-content-center">
+    <!-- login container -->
+    <div style="margin-top: 15%;" class="container grid place-content-center">
+
+        <form id="login" action="" method="post">
+            
+            <!-- user registration intro -->
+
+            <!-- <h1 class="text-white text-9xl">you're <span class="text-blue-600">in</span>!</h1> -->
+            <h1 class="text-white text-9xl">{{dyn_message}}!</h1>
+        </form>
+        <!-- <h1 style="display: inline-block" class="text-3xl text-white">get started</h1> -->
+    </div>
+    
+    
+    <script type="text/javascript">
+        
+    const delay = (delayInms) => {
+            return new Promise(resolve => setTimeout(resolve, delayInms));
+        }
+
+    const sample = async () => {
+        console.log("delay activated")
+        let delayLogin = await delay(3000);
+        
+        window.open("/detection", "_blank")
+        window.close()
+    }
+    sample();
+    </script>
+</body>
+{% endblock %}

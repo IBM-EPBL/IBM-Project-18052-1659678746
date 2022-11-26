@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<!-- Tailwind-Powered CSS -->
+<link rel="stylesheet" href="styles.css">
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Bootstrap Imports -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body %}
+<body style="max-width: 1440px; margin-left: 5%" class="bg-black overflow-hidden place-content-center">
+    <h1 style="position: absolute; rotate: 270deg; font-size: 150px; right: 2%" class="text-white font-bold">v<span class="text-blue-600">eye</span></h1>
+    <!-- login container -->
+    <div style="margin-top: 20%;" class="container grid place-content-center">
+
+        <form id="register_name" action="{{url_for("register_email")}}" method="post">
+            
+            <!-- get name -->
+
+            <label for="user_name">
+                <h1 class="text-white text-3xl">you must have a <span class="text-blue-600">name</span><span style="display: block; font-style: italic;"> or should I call you mine? :v</span></h1>
+            </label>
+            <input id="user_name" 
+            style="text-align: right;" 
+            class="focus:outline-none bg-black text-white text-8xl" 
+            type="text" 
+            name="user_name" 
+            placeholder="e.g. 'Anand Prince'"/>
+
+        </form>
+        <button form="register_name" id="register_direct_email" type="submit" style="margin-left: 5%; position: relative; max-width: 150px" class="hover:bg-blue-600 rounded-full text-white text-9xl pl-2 pb-4">
+            ></button>
+    </div>
+    
+    
+    <script type="text/javascript">
+        const register_user_email = document.getElementById("register_direct_email")
+
+//         register_user_email.addEventListener("click", () => {
+//             window.open("/register_email", "_blank")
+//             window.close()
+
+// })
+    </script>
+</body>
+{% endblock %}

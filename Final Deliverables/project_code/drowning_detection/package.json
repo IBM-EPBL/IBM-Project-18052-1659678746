@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  },
+  "scripts": {
+    "build-css": "npx tailwindcss -i ./src/styles.css -o ./templates/styles.css --watch"
+  },
+  "dependencies": {
+    "@vonage/server-sdk": "^3.0.9"
+  }
+}

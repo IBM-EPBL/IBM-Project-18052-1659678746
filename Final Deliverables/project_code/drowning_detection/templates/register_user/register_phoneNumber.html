@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<!-- Tailwind-Powered CSS -->
+<link rel="stylesheet" href="styles.css">
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Bootstrap Imports -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body %}
+<body style="max-width: 1440px; margin-left: 5%" class="bg-black overflow-hidden place-content-center">
+    <h1 style="position: absolute; rotate: 270deg; font-size: 150px; right: 2%" class="text-white font-bold">v<span class="text-blue-600">eye</span></h1>
+    <!-- login container -->
+    <div style="margin-top: 20%;" class="container grid place-content-center">
+
+        <form id="register_phone" action="{{url_for("register_outro")}}" method="post">
+            
+            <!-- get name -->
+
+            <label for="user_phone">
+                <h1 class="text-white text-3xl">final step; your <span class="text-blue-600">phone number</span> to set you in touch with us<span style="display:block" id="phone_hint" class="text-gray-600 italic">for alerts just in case</span></h1>
+            </label>
+            <input id="user_phone" 
+            style="text-align: right;" 
+            class="focus:outline-none bg-black text-white text-8xl" 
+            type="text" 
+            name="user_phone" 
+            placeholder="p/number"/>
+
+        </form>
+        <button form="register_phone" id="register_direct_outro" type="submit" style="margin-left: 5%; position: relative; max-width: 150px" class="hover:bg-blue-600 rounded-full text-white text-9xl pl-2 pb-4">
+            ></button>
+    </div>
+    
+    
+    <script type="text/javascript">
+        const register_user_phoneNumber = document.getElementById("register_direct_outro")
+
+        // register_user_phoneNumber.addEventListener("click", () => {
+        //     window.open("/register_outro", "_blank")
+        //     window.close()
+        // })
+    </script>
+</body>
+{% endblock %}

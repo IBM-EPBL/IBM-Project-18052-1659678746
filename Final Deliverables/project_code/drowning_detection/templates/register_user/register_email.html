@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<!-- Tailwind-Powered CSS -->
+<link rel="stylesheet" href="styles.css">
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Bootstrap Imports -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body %}
+<body style="max-width: 1440px; margin-left: 5%" class="bg-black overflow-hidden place-content-center">
+    <h1 style="position: absolute; rotate: 270deg; font-size: 150px; right: 2%" class="text-white font-bold">v<span class="text-blue-600">eye</span></h1>
+    <!-- login container -->
+    <div style="margin-top: 20%;" class="container grid place-content-center">
+
+        <form id="register_email" action="{{url_for("register_password")}}" method="post">
+            
+            <!-- get email -->
+
+            <label for="user_email">
+                <h1 class="text-white text-3xl">where do we <span class="text-blue-600">mail</span> you at? <span style="display:block" id="email_hint" class="text-gray-600 italic">number 6, 5th avenue? jk, it's electronic mail xD</span></h1>
+            </label>
+            <input id="user_email" 
+            style="text-align: right;" 
+            class="focus:outline-none bg-black text-white text-8xl" 
+            type="text" 
+            name="user_email" 
+            placeholder="e/mail"/>
+
+        </form>
+        <button form="register_email" id="register_direct_password" type="submit" style="margin-left: 5%; position: relative; max-width: 150px" class="hover:bg-blue-600 rounded-full text-white text-9xl pl-2 pb-4">
+            ></button>
+    </div>
+    
+    
+    <script type="text/javascript">
+        const register_user = document.getElementById("register_direct_password")
+
+        // register_user.addEventListener("click", () => {
+        //     window.open("/register_password", "_blank")
+        //     window.close()
+        // })
+
+        const user_email = document.getElementById("user_email")
+        const email_hint = document.getElementById("email_hint")
+        
+        user_email.addEventListener("change", () => {
+            console.log(user_email.value.length)
+            user_email.value.length > 0 ? email_hint.style.display = "none" : email_hint.style.display = "block"
+        })
+    </script>
+</body>
+{% endblock %}
