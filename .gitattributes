@@ -1,0 +1,8 @@
+* linguist-vendored
+*.c linguist-vendored=false
+*.h linguist-vendored=false
+*.m linguist-vendored=false
+*.py linguist-vendored=false
+*.html linguist-vendored=false
+*.js linguist-vendored=false
+Assignments/** linguist-vendored
