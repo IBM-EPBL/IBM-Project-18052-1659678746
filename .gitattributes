@@ -5,4 +5,5 @@
 *.py linguist-vendored=false
 *.html linguist-vendored=false
 *.js linguist-vendored=false
-Assignments/** linguist-vendored
+*.ipynb linguist-vendored=true
+Assignments/** linguist-vendored=true
